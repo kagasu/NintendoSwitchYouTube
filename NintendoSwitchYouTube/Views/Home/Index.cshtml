@@ -1,0 +1,19 @@
+﻿<form method="get" action="/Home/Search" accept-charset="utf-8">
+    <div class="form-group">
+        <label for="q">Search word</label>
+        <input type="text" class="form-control" name="q" />
+    </div>
+
+    <div class="form-group">
+        <label for="q">Number of results(0-500)</label>
+        <input type="number" class="form-control" name="n" value="24" max="500" />
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="&#xf002; Search">
+    </div>
+</form>
+<style>
+    input[type="submit"] {
+        font-family: FontAwesome;
+    }
+</style>

@@ -1,0 +1,62 @@
+﻿@model NintendoSwitchYouTube.Models.Home.SearchViewModel
+
+<div class="videos_box_container">
+
+    @foreach (var x in Model.SearchResults)
+    {
+        <div class="videos_box" onclick="changeVideoSource('@x.Id.VideoId')" onkeydown="onKeyDown('@x.Id.VideoId')" tabindex="0">
+            <div>
+                <img src="@x.Snippet.Thumbnails.Default__.Url" />
+            </div>
+            <div>
+                <span>@x.Snippet.Title</span>
+            </div>
+        </div>
+    }
+</div>
+
+<video id="video" width="0" height="0">
+    <source id="video_source">
+</video>
+
+<style>
+    .videos_box_container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .videos_box {
+        margin: 10px;
+        width: 120px;
+        justify-content: space-around;
+        font-size: smaller;
+    }
+
+    span {
+        text-wrap: normal;
+    }
+
+    #div-video {
+        visibility: hidden
+    }
+</style>
+
+@section Scripts
+{
+<script>
+    $.ajaxSetup({ async: false });
+
+    function changeVideoSource(videoId) {
+        $.get('/Home/VideoStreamUrl/?v=' + videoId, function (data) {
+            $('#video_source').attr('src', data.url);
+            document.getElementById('video').load();
+        }, 'json');
+    }
+
+    function onKeyDown(videoId) {
+        if (window.event.keyCode == 13) {
+            changeVideoSource(videoId)
+        }
+    }
+</script>
+}
