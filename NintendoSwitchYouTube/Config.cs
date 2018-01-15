@@ -16,8 +16,11 @@ namespace NintendoSwitchYouTube
         [JsonProperty("ip_address")]
         public string IpAddress { get; set; }
 
-        [JsonProperty("port")]
-        public int Port { get; set; }
+        [JsonProperty("http_port")]
+        public int HttpPort { get; set; }
+
+        [JsonProperty("proxy_port")]
+        public int ProxyPort { get; set; }
 
         private Config()
         {
