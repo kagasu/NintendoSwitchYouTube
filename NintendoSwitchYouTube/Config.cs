@@ -1,8 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace NintendoSwitchYouTube
 {
@@ -13,8 +10,14 @@ namespace NintendoSwitchYouTube
         [JsonProperty("youtube_api_key")]
         public string YouTubeApiKey { get; set; }
 
-        [JsonProperty("ip_address")]
-        public string IpAddress { get; set; }
+        [JsonProperty("web_server_ip_address")]
+        public string WebServerIpAddress { get; set; }
+
+        [JsonProperty("dns_redirect_ip_address")]
+        public string DNSRedirectIpAddress { get; set; }
+
+        [JsonProperty("dns_upstream_ip_address")]
+        public string DNSUpstreamIpAddress { get; set; }
 
         [JsonProperty("port")]
         public int Port { get; set; }

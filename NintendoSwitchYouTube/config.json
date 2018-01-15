@@ -1,5 +1,7 @@
 ﻿{
   "youtube_api_key": "ENTER_YOUR_YOUTUBE_API_KEY",
-  "ip_address": "0.0.0.0",
+  "web_server_ip_address": "0.0.0.0",
+  "dns_redirect_ip_address": "ENTER_YOUR_WEB_SERVER_IP_ADDRESS",
+  "dns_upstream_ip_address": "8.8.8.8",
   "port": 80
 }
